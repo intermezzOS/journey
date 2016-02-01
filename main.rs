@@ -3,10 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 fn main() {
-    let filename = match env::args().nth(1) {
-        Some(n) => n,
-        None => panic!("Must give file name as command line argument")
-    };
+    let filename = env::args().nth(1).expect("Must give file name as command line argument");
 
     let contents = read(&filename);
     let reversed = contents.chars().rev().collect::<String>();
@@ -21,7 +18,7 @@ fn read(filename: &String) -> String {
     string
 }
 
-fn write(filename: &String, string: &String) {
+fn write(filename: &String, contents: &String) {
     let mut f = File::create(filename).unwrap();
-    f.write_all(string.clone().into_bytes().as_ref()).unwrap();
+    f.write_all(contents.as_ref()).unwrap();
 }
