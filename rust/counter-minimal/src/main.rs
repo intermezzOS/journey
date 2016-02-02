@@ -2,7 +2,7 @@
 #![feature(lang_items)]
 #![feature(start)]
 #![no_std] // no standard lib linking
-#![no_main] // there is no rust main function only a C-like extern function
+#![no_main] // there is no Rust main function only a C-like extern function
 
 extern crate libc;
 
