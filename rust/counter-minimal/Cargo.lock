@@ -1,0 +1,12 @@
+[root]
+name = "counter"
+version = "1.0.0"
+dependencies = [
+ "libc 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
